@@ -35,6 +35,7 @@ datasets
 </pre></code>
   
 #### 2-2. 데이터 표본  
+  
 	* 한국교육종단연구2005의 조사를 위하여 2005년 전국의 중학교 학생으로부터 표본 추출.  
 	* 학생 표본은 체육 중학교와 분교를 제외한 전국의 2,929개 중학교에 재학하고 있는 1학년 학생 703,914명으로부터 6,908명 추출  
 	* 주요 조사 내용 중 학생의 인지적 성취, 비인지적 성취를 활용  
@@ -79,42 +80,42 @@ Training data를 이용하여 중학 학업 성취도에 영향을 미치는 요
 • Overfitting 방지 하기위해  hyperparameter : max_depth=6 설정  
   
 • Decision Tree RMSE 결과  
-- DT train RMSE : 15.3185  
-- DT test RMSE : 15.9537  
+ - DT train RMSE : 15.3185  
+ - DT test RMSE : 15.9537  
     => 다른 알고리즘(LR, NN)과 비슷한 결과  
   
 #### 2) Random Forest  
   
-overfitting 방지 하기위해 hyperparameter 2종류를 tuning하여 최적의 hyperparameter 값을 찾아 제약한 상태에서 fitting  
- 1. min_samples_split = 4  
- 2. max_depth = 6  
-Random Forest RMSE 결과  
+* overfitting 방지 하기위해 hyperparameter 2종류를 tuning하여 최적의 hyperparameter 값을 찾아 제약한 상태에서 fitting  
+ 1) min_samples_split = 4  
+ 2) max_depth = 6  
+* Random Forest RMSE 결과  
 RF train RMSE : 14.796034479862131  
 RF test RMSE : 15.840798690462156  
     => 다른 알고리즘 모델 방법론과 비교했을 때, test set RMSE값이 가장 낮음  
   
 #### 3) Linear Regression  
   
-• label이 continuous하므로 제일 기초적인 linear regression모델 사용  
-• Linear Regression RMSE 결과  
-- LR train RMSE : 15.7946  
+* label이 continuous하므로 제일 기초적인 linear regression모델 사용  
+* Linear Regression RMSE 결과  
+LR train RMSE : 15.7946  
      => 국어, 영어, 수학 점수 나누기 3을 했을 때, 평균과 비교해서 약 15점 차이가 난다는 것을 확인할 수 있음.   
-- LR test RMSE : 16.1208  
-• Result : train loss와 test loss가 거의 같기 때문에 overfitting되지 않고 잘 나온 것을 확인.  
+LR test RMSE : 16.1208  
+* Result : train loss와 test loss가 거의 같기 때문에 overfitting되지 않고 잘 나온 것을 확인.  
   
   
 #### 4) Neural Network  
   
-• 다른 종류의 머신러닝 알고리즘보다 DNN의 성능이 좋을 것으로 예상하고 학습 진행  
-• hidden layer는 3층, activation은 ReLU, optimizer는 Adam을 사용  
-• input layer의 node 수는 feature개수입니다.  
+* 다른 종류의 머신러닝 알고리즘보다 DNN의 성능이 좋을 것으로 예상하고 학습 진행  
+* hidden layer는 3층, activation은 ReLU, optimizer는 Adam을 사용  
+* input layer의 node 수는 feature개수입니다.  
   
-• 신경망 RMSE 결과  
+* 신경망 RMSE 결과  
 - NN test RMSE : 16.437  
-• Result : 예상과 다르게 다른 알고리즘(LR, NN)과 거의 비슷한 결과가 나온 것을 확인  
-• layer의 수를 늘려 보고, Batch Normalization layer도 써봤으나 오히려 RMSE값이 증가  
+* Result : 예상과 다르게 다른 알고리즘(LR, NN)과 거의 비슷한 결과가 나온 것을 확인  
+* layer의 수를 늘려 보고, Batch Normalization layer도 써봤으나 오히려 RMSE값이 증가  
   
-#### Result  
+### Result  
 Model |	RMSE  
 --|--  
 Decision Tree | 16.367  
