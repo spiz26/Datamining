@@ -16,8 +16,7 @@
 ### 2. DATA  
 #### 2-1. 데이터 출처  
 * 한국교육개발원 - 한국교육종단연구2005(이하 KELS2005) 교육용 데이터 : 학생들의 교육적 경험과 성취에 대한 종단자료 구축  
-<pre><code>
-datasets
+<pre><code>datasets
 |----KELS2005 교육용 데이터
 |     |--- Y1_SCH_EDU.csv
 |     |___ Y1_STD_EDU.csv
@@ -180,7 +179,8 @@ DNN RMSE : 15.882743847097386
 
 ### 7. 성능 향상 결과  
   
-Modeling | RMSE | RMSE 변화
+Model | RMSE | RMSE 변화
+--|--|--
 Filter Decision Tree | 16.324 | -0.003
 Filter Random Forest | 16.026 | +0.186
 Filter Linear Regression | 16.848 | +0.445
