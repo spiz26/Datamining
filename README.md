@@ -116,7 +116,8 @@ LR test RMSE : 16.1208
 * layer의 수를 늘려 보고, Batch Normalization layer도 써봤으나 오히려 RMSE값이 증가  
   
 ### Result  
-Model |	RMSE  
+  
+Model |	RMSE
 --|--  
 Decision Tree | 16.367  
 Random Forest |	15.840  
